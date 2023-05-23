@@ -1,42 +1,52 @@
 "use strict"
 
+// ↓↓ 訪問者カウンター ↓↓ ---------------------- 
 
-// ↓↓ プロフ画面の✖ボタン他の表示切り替え ↓↓ ---------------
+  const visit = document.getElementById("visit");
+  const v_counter = document.getElementById("v_counter");
 
-  const prof_top = document.getElementById("prof_top");
-  const prof_header = document.getElementById("prof_header");
+  let visit_count = 0;
 
-  // 位置を確認してクラスを制御
-  function top_button(){
-    if(prof_top.getBoundingClientRect().y < -100){
-      prof_header.classList.add("gray");
-    } else {
-      prof_header.classList.remove("gray");
+  visit.addEventListener('click',()=>{
+
+    visit_count++;
+    
+    if(visit_count == 1){
+      v_counter.classList.add("apear");
+    }else if(visit_count == 10){
+      visit_count = 0;
+      v_counter.classList.remove("apear");
+      v_counter.innerHTML = 1;
+    }else{
+      v_counter.innerHTML = visit_count;
     };
-  };
-
-  // スクロールするたびに判定
-  window.addEventListener("scroll",top_button);
-
-// ↑↑ プロフ画面の✖ボタン他の表示切り替え ↑↑ ---------------
-
-// ハートアニメーション
-
-  const favorite = document.getElementById("favorite");
-  const love = document.getElementById("love");
-
-  let love_current = false;
-
-  favorite.addEventListener('click',()=>{
-    if(!love_current){
-      love_current = true;
-      favorite.classList.add("love");
-      love.classList.add("love");
-    } else {
-      love_current = false;
-      favorite.classList.remove("love");
-      love.classList.remove("love");
-    }
+    
   });
 
-// ハートアニメーション
+// ↑↑ 訪問者カウンター ↑↑ ---------------------- 
+
+
+// ↓↓ 訪問者カウンター ↓↓ ---------------------- 
+
+  const messe = document.getElementById("messe");
+  const m_counter = document.getElementById("m_counter");
+
+  let messe_count = 0;
+
+  messe.addEventListener('click',()=>{
+
+    messe_count++;
+    
+    if(messe_count == 1){
+      m_counter.classList.add("apear");
+    }else if(messe_count == 10){
+      messe_count = 0;
+      m_counter.classList.remove("apear");
+      m_counter.innerHTML = 1;
+    }else{
+      m_counter.innerHTML = messe_count;
+    };
+    
+  });
+
+// ↑↑ 訪問者カウンター ↑↑ ---------------------- 

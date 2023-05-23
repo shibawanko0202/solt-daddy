@@ -3,6 +3,7 @@
 :root{
   --solt-pink: rgb(201, 150, 173);
   --solt-brown: rgb(113, 93, 93);
+  --solt-green: rgb(93, 204, 93);
 }
 
   html{
@@ -16,9 +17,9 @@
     background-color: #fff;
     width: 100%;
     max-width: 500px;
-    /* height: 100%; */
     margin: 0 auto;
     font-family: 'Kiwi Maru', serif;
+    font-weight: 300;
   }
 
 /* common */
@@ -114,6 +115,10 @@ header{
     color: #fff;
     font-size: 16px;
     font-family: 'Nanum Gothic Coding', monospace;
+    opacity: 0;
+  }
+  .topiccount.apear{
+    opacity: 1;
   }
 
 /* header */
@@ -207,7 +212,7 @@ header{
   }
   .person p::before{
     content: "●";
-    color: rgb(48, 194, 48);
+    color: var(--solt-green);
     font-size: 14px;
     padding-right: 3px;
   }
@@ -286,7 +291,7 @@ header{
   }
   .prof_top h1{
     height: 50px;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 20px;
     line-height: 50px;
   }
@@ -298,6 +303,7 @@ header{
     border-radius: 10px;
     overflow: hidden;
     position: relative;
+    cursor: pointer;
   }
   .prof_mainimag .favorite{
     position: absolute;
@@ -305,7 +311,7 @@ header{
     left: calc(50% - 70px);
     z-index: 99;
     font-size: 140px;
-    color: rgb(231, 111, 207);
+    color: rgb(243, 149, 192);
     opacity: 0;
   }
   .prof_mainimag .favorite.love{
@@ -380,7 +386,7 @@ header{
     color: #fff;
   }
   .prof_info span{
-    font-weight: bold;
+    font-weight: 500;
     font-size: 20px;
     padding-right: 8px;
   }
@@ -421,8 +427,11 @@ header{
   .prof_top_under span.love{
     color: var(--solt-pink);
   }
-  .prof_top_under p::before{
+  .hour::before{
     content: "●";
+  }
+  .hour.online{
+    color: var(--solt-green);
   }
   .prof_top .sub_img{
     width: 90%;
@@ -474,7 +483,7 @@ header{
   }
   .self-introduction h2{
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 500;
     margin-bottom: 16px;
   }
   .self-introduction p{
@@ -501,7 +510,7 @@ header{
     color: #999;
   }
   .self-introduction-data dd{
-    font-weight: bold;
+    font-weight: 500;
     text-align: right;
   }
   

@@ -4,6 +4,7 @@
   --solt-pink: rgb(201, 150, 173);
   --solt-brown: rgb(113, 93, 93);
   --solt-green: rgb(93, 204, 93);
+  --solt-heart: rgb(243, 149, 192);
 }
 
   html{
@@ -311,7 +312,7 @@ header{
     left: calc(50% - 70px);
     z-index: 99;
     font-size: 140px;
-    color: rgb(243, 149, 192);
+    color: var(--solt-heart);
     opacity: 0;
   }
   .prof_mainimag .favorite.love{
@@ -425,7 +426,7 @@ header{
     color: var(--solt-pink);
   } */
   .prof_top_under span.love{
-    color: var(--solt-pink);
+    color: var(--solt-heart);
   }
   .hour::before{
     content: "●";

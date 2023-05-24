@@ -420,13 +420,31 @@ header{
   }
   .prof_top_under span{
     cursor: pointer;
-    transition: all .3s;
+    transition: all .5s;
   }
   /* .prof_top_under span:hover{
     color: var(--solt-pink);
   } */
   .prof_top_under span.love{
     color: var(--solt-heart);
+    animation: love_s .8s forwards;
+  }
+  @keyframes love_s {
+    0% {
+      transform: scale(.1);
+    }
+    40% {
+      transform: scale(2);
+    }
+    60% {
+      transform: scale(1);
+    }
+    80% {
+      transform: scale(1.4);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
   .hour::before{
     content: "●";

@@ -326,7 +326,7 @@ header{
     }
     40% {
       transform: scale(2);
-      opacity: 1;
+      opacity: .8;
     }
     60% {
       transform: scale(1);

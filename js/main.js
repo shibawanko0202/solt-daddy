@@ -26,7 +26,7 @@
 // ↑↑ 訪問者カウンター ↑↑ ---------------------- 
 
 
-// ↓↓ 訪問者カウンター ↓↓ ---------------------- 
+// ↓↓ メッセージカウンター ↓↓ ---------------------- 
 
   const messe = document.getElementById("messe");
   const m_counter = document.getElementById("m_counter");
@@ -49,4 +49,23 @@
     
   });
 
-// ↑↑ 訪問者カウンター ↑↑ ---------------------- 
+// ↑↑ メッセージカウンター ↑↑ ---------------------- 
+
+// ↓↓ 有料コンテンツ用アナウンス ↓↓ ---------------------- 
+
+  const attention = document.getElementById("attention");
+  const paid_contents = document.getElementsByClassName("paid_content");
+
+
+  for(let i = 0;i < paid_contents.length;i++){
+    paid_contents[i].addEventListener('click',()=>{
+      attention.classList.remove("hidden");
+    });
+  };
+
+  attention.addEventListener('click',()=>{
+    attention.classList.add("hidden");
+  });
+
+// ↑↑ 有料コンテンツ用アナウンス ↑↑ ---------------------- 
+

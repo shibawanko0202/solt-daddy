@@ -21,9 +21,62 @@
     margin: 0 auto;
     font-family: 'Kiwi Maru', serif;
     font-weight: 300;
+    position: relative;
   }
 
 /* common */
+
+/* 有料コンテンツ */
+
+  .attention{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    transform: translateX(-50%);
+    background-color: #999999aa;
+    z-index: 999;
+    opacity: 1;
+    transition: all .3s;
+  }
+  .attention.hidden{
+    pointer-events: none;
+    opacity: 0;
+  }
+  .attention_box{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    align-items: center;
+    width: 80%;
+    min-width: 220px;
+    max-width: 300px;
+    height: 160px;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+  }
+  .attention_box p{
+    padding: 8px 0 8px;
+  }
+  .attention_box p:nth-child(1){
+    color: rgb(212, 108, 125);
+    font-weight: 500;
+    padding: 20px 0 8px;
+    font-size: 18px;
+  }
+  .attention_box button{
+    color: #333;
+    padding-top: 18px;
+  }
+
+/* 有料コンテンツ */
 
 
 /* header */
@@ -34,7 +87,7 @@ header{
   background-color: #fff;
   width: 100%;
   max-width: 500px;
-  z-index: 999;
+  z-index: 99;
   box-shadow: 0 3px 3px #0000002d;
 }
   header .header_top{
@@ -45,7 +98,7 @@ header{
     border-bottom: 1.5px solid rgba(99, 76, 76, 0.358);
   }
   header .titleimg{
-    width: 260px;
+    width: 240px;
     object-fit: contain;
     padding: 8px 16px 0px;
   }
@@ -239,7 +292,7 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 10px 10px;
-    z-index: 999;
+    z-index: 99;
   }
   .prof_header p{
     display: flex;
@@ -375,7 +428,7 @@ header{
     font-size: 40px;
     padding: 0;
     cursor: pointer;
-    z-index: 999;
+    z-index: 99;
     text-shadow: 0 0 5px #00000079;
     /* cursor: crosshair; */
   }

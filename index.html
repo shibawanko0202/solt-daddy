@@ -31,6 +31,18 @@
 </head>
 
 <body>
+  <div class="attention hidden" id="attention">
+    <div class="attention_box">
+      <p>
+        サービスを利用できません
+      </p>
+      <p>
+        こちらのサービスは<br>
+        有料会員様限定となります<br>
+      </p>
+      <button>閉じる</button>
+    </div>
+  </div>
   <header>
     <div class="header_top">
       <img src="img/soltdaddy.png" alt="" class="titleimg">
@@ -43,13 +55,13 @@
       </div>
     </div>
     <ul class="header_menu">
-      <li>
+      <li class="paid_content">
         <span class="material-symbols-outlined">
           search
           </span>
         検索
       </li>
-      <li>
+      <li class="paid_content">
         <span class="material-symbols-outlined">
           assignment
           </span>
@@ -62,7 +74,7 @@
           </span>
         メッセージ
       </li>
-      <li>
+      <li class="paid_content">
         <span class="material-symbols-outlined">
           favorite
         </span>
@@ -80,7 +92,7 @@
   <main>
     <ul class="situation">
       <li class="current">オンライン</li>
-      <li>新規</li>
+      <li class="paid_content">新規</li>
     </ul>
     <ul class="personlist">
       <li class="person">

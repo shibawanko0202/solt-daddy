@@ -51,7 +51,6 @@
   .attention_box{
     display: flex;
     flex-direction: column;
-    /* justify-content: space-around; */
     align-items: center;
     width: 80%;
     min-width: 220px;
@@ -221,6 +220,12 @@ header{
     border-radius: 10px;
     overflow: hidden;
     position: relative;
+    background-size: cover;
+    background-position: 50% 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
   }
   .person a{
     position: absolute;
@@ -234,14 +239,7 @@ header{
   .person:hover{
     cursor: pointer;
   }
-  .person img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
+
   .person::after {
     content: '';
     position: absolute;
@@ -251,25 +249,34 @@ header{
     height: 100%;
     background-image: linear-gradient(180deg, transparent 0 60%, #0000006c 100%);
   }
-  .person p{
+  .thumbnail_info{
     display: block;
     max-width: 90%;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    padding-bottom: 8px;
+    padding-bottom: 2px;
     z-index: 2;
     color: #fff;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-  .person p::before{
+  .thumbnail_info::before{
     content: "●";
     color: var(--solt-green);
     font-size: 14px;
     padding-right: 3px;
+  }
+  .thumbnail_oneword{
+    display: block;
+    max-width: 90%;
+    padding-bottom: 6px;
+    padding-left: 4px;
+    z-index: 2;
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 300;
+    font-size: 12px;
   }
 /* main */
 
@@ -358,7 +365,8 @@ header{
     border-radius: 10px;
     overflow: hidden;
     position: relative;
-    cursor: pointer;
+    background-size: cover;
+    background-position: 50% 50%;
   }
   .prof_mainimag .favorite{
     position: absolute;
@@ -368,6 +376,7 @@ header{
     font-size: 140px;
     color: var(--solt-heart);
     opacity: 0;
+    cursor: pointer;
   }
   .prof_mainimag .favorite.love{
     animation: love .8s;
@@ -396,14 +405,6 @@ header{
     }
   }
     
-  .prof_mainimag img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
   .prof_mainimag::after {
     content: '';
     position: absolute;
@@ -423,14 +424,17 @@ header{
     left: 0;
     transform: translateY(-50%);
     color: #fff;
+    z-index: 10;
   }
   .arrows .material-symbols-outlined{
     font-size: 40px;
     padding: 0;
-    cursor: pointer;
-    z-index: 99;
+    /* cursor: pointer; */
     text-shadow: 0 0 5px #00000079;
-    /* cursor: crosshair; */
+  }
+  .arrow_link{
+    width: 50px;
+    height: 50px;
   }
   .prof_info{
     display: block;
@@ -442,7 +446,7 @@ header{
     z-index: 2;
     color: #fff;
   }
-  .prof_info span{
+  .prof_name{
     font-weight: 500;
     font-size: 20px;
     padding-right: 8px;
@@ -576,11 +580,12 @@ header{
     padding-bottom: 10px;
   }
   .self-introduction-data dt{
-    font-weight: normal;
+    font-weight: 300;
   }
   .self-introduction-data dt::before{
     content: "■";
     color: #999;
+    padding-right: 3px;
   }
   .self-introduction-data dd{
     font-weight: 500;

@@ -51,15 +51,21 @@
 const attention = document.getElementById("attention");
 const paid_contents = document.getElementsByClassName("paid_content");
 
+function taboo(e){
+  e.preventDefault();
+};
+
 
 for(let i = 0;i < paid_contents.length;i++){
   paid_contents[i].addEventListener('click',()=>{
     attention.classList.remove("hidden");
+    document.addEventListener('mousewheel', taboo, { passive: false });
   });
 };
 
 attention.addEventListener('click',()=>{
   attention.classList.add("hidden");
+  document.removeEventListener('mousewheel', taboo, { passive: false });
 });
 
 // ↑↑ 有料コンテンツ用アナウンス ↑↑ ---------------------- 
@@ -71,6 +77,7 @@ attention.addEventListener('click',()=>{
   top_name.innerHTML = persons[getParam("p")].name;
   prof_name.innerHTML = persons[getParam("p")].name;
   mainimg.style.backgroundImage = `url(${persons[getParam("p")].img})`;
+  hour.innerHTML = persons[getParam("p")].login;
   oneword.innerHTML = persons[getParam("p")].oneword;
   age_place.innerHTML = `${persons[getParam("p")].age}歳/${persons[getParam("p")].place}`;
   prof_name.innerHTML = persons[getParam("p")].name;
@@ -115,8 +122,20 @@ attention.addEventListener('click',()=>{
   const wish_dt = document.getElementById("wish_dt");
 
   if(person_current == (persons.length - 1)){
-    work_dt.innerHTML = "年収"
-    wish_dt.innerHTML = "資産"
+    work_dt.innerHTML = "年収";
+    wish_dt.innerHTML = "資産";
   };
 
 // ↑↑ 勝也の場合のみdtの変更 ↑↑ ------------------
+
+
+// ↓↓ 状態に応じて表示変更 ↓↓ ------------------
+
+if(persons[getParam("p")].login == last_login[0]){
+  hour.classList.add("online");
+};
+if(persons[getParam("p")].proof){
+  proof.classList.add("on");
+};
+
+// ↑↑ 状態に応じて表示変更 ↑↑ ------------------

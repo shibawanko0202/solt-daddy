@@ -1,5 +1,25 @@
 "use strict"
 
+// ↓↓ ハンバーガーメニュー ↓↓ ---------------------- 
+
+  const hamburger = document.getElementById("hamburger");
+  let hamburger_current = false;
+
+  hamburger.addEventListener('click',()=>{
+
+    if(!hamburger_current){
+      hamburger_current = true;
+      hamburger.classList.add("apear");
+    }else{
+      hamburger_current = false;
+      hamburger.classList.remove("apear");
+    };
+
+  });
+
+// ↓↓ ハンバーガーメニュー ↓↓ ---------------------- 
+
+
 // ↓↓ 訪問者カウンター ↓↓ ---------------------- 
 
   const visit = document.getElementById("visit");

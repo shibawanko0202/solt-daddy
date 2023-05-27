@@ -3,6 +3,7 @@
 // ↓↓ ハンバーガーメニュー ↓↓ ---------------------- 
 
   const hamburger = document.getElementById("hamburger");
+  const hamburger_back = document.getElementById("hamburger_back");
   let hamburger_current = false;
 
   hamburger.addEventListener('click',()=>{
@@ -10,9 +11,15 @@
     if(!hamburger_current){
       hamburger_current = true;
       hamburger.classList.add("apear");
+      hamburger_back.classList.add("apear");
+      document.addEventListener('mousewheel', taboo, { passive: false });
+      document.addEventListener('touchmove', taboo, { passive: false });
     }else{
       hamburger_current = false;
       hamburger.classList.remove("apear");
+      hamburger_back.classList.remove("apear");
+      document.removeEventListener('mousewheel', taboo, { passive: false });
+      document.removeEventListener('touchmove', taboo, { passive: false });
     };
 
   });

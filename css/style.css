@@ -112,6 +112,7 @@ header{
     width: 60px;
     height: 60px;
     cursor: pointer;
+    z-index: 10;
     transition: all .6s;
   }
   .hamburger-body.apear {
@@ -207,6 +208,21 @@ header{
     width: 100%;
 
   }
+  .hamburger_back{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: #00000085;
+    z-index: 4;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .6s;
+  }
+  .hamburger_back.apear{
+    pointer-events: auto;
+    opacity: 1;
+  }
+
   .header_menu{
     display: flex;
     justify-content: space-around;

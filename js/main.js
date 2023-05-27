@@ -51,24 +51,32 @@
 
 // ↑↑ メッセージカウンター ↑↑ ---------------------- 
 
+
 // ↓↓ 有料コンテンツ用アナウンス ↓↓ ---------------------- 
 
-  const attention = document.getElementById("attention");
-  const paid_contents = document.getElementsByClassName("paid_content");
+const attention = document.getElementById("attention");
+const paid_contents = document.getElementsByClassName("paid_content");
+
+function taboo(e){
+  e.preventDefault();
+};
 
 
-  for(let i = 0;i < paid_contents.length;i++){
-    paid_contents[i].addEventListener('click',()=>{
-      attention.classList.remove("hidden");
-    });
-  };
-
-  attention.addEventListener('click',()=>{
-    attention.classList.add("hidden");
+for(let i = 0;i < paid_contents.length;i++){
+  paid_contents[i].addEventListener('click',()=>{
+    attention.classList.remove("hidden");
+    document.addEventListener('mousewheel', taboo, { passive: false });
+    document.addEventListener('touchmove', taboo, { passive: false });
   });
+};
+
+attention.addEventListener('click',()=>{
+  attention.classList.add("hidden");
+  document.removeEventListener('mousewheel', taboo, { passive: false });
+  document.removeEventListener('touchmove', taboo, { passive: false });
+});
 
 // ↑↑ 有料コンテンツ用アナウンス ↑↑ ---------------------- 
-
 
 
 // ↓↓ サムネイル複製 ↓↓ ---------------------- 

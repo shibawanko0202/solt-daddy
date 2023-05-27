@@ -60,12 +60,14 @@ for(let i = 0;i < paid_contents.length;i++){
   paid_contents[i].addEventListener('click',()=>{
     attention.classList.remove("hidden");
     document.addEventListener('mousewheel', taboo, { passive: false });
+    document.addEventListener('touchmove', taboo, { passive: false });
   });
 };
 
 attention.addEventListener('click',()=>{
   attention.classList.add("hidden");
   document.removeEventListener('mousewheel', taboo, { passive: false });
+  document.removeEventListener('touchmove', taboo, { passive: false });
 });
 
 // ↑↑ 有料コンテンツ用アナウンス ↑↑ ---------------------- 

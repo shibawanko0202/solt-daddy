@@ -166,6 +166,10 @@ header{
     width: 80%;
     color: #fff;
     line-height: 24px;
+    pointer-events: none;
+  }
+  .apear .hamburger_p{
+    pointer-events: auto;
   }
   .hamburger_p span{
     opacity: 0;
